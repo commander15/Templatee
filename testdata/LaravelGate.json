@@ -1,0 +1,21 @@
+{
+    "name": "LaravelGate",
+    "description": "Laravel data handling toolkit for Qt",
+    "qt": {
+        "modules": [ "Core", "Network" ]
+    },
+    "dependencies": [
+        {
+            "name": "DataGate",
+            "required": true
+        },
+        {
+            "name": "Jsoner",
+            "required": true
+        },
+        {
+            "name": "RestLink",
+            "required": true
+        }
+    ]
+}

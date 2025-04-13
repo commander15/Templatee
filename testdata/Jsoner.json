@@ -1,0 +1,13 @@
+{
+    "name": "Jsoner",
+    "description": "Json extension for Qt",
+    "qt": {
+        "modules": [ "Core" ]
+    },
+    "dependencies": [
+        {
+            "name": "Jsoner",
+            "required": true
+        }
+    ]
+}

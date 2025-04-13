@@ -1,0 +1,13 @@
+#ifndef {{ Project.macro }}_CONFIG_H
+#define {{ Project.macro }}_CONFIG_H
+
+#include <QtCore/qglobal.h>
+
+#define {{ Project.macro }}_VERSION_MAJOR @{{ Project.name }}_VERSION_MAJOR@
+#define {{ Project.macro }}_VERSION_MINOR @{{ Project.name }}_VERSION_MINOR@
+#define {{ Project.macro }}_VERSION_PATCH @{{ Project.name }}_VERSION_PATCH@
+#define {{ Project.macro }}_VERSION_STR   "@{{ Project.name }}_VERSION@"
+#define {{ Project.macro }}_VERSION       {{ Project.macro }}_VERSION_CHECK({{ Project.macro }}_VERSION_MAJOR, {{ Project.macro }}_VERSION_MINOR, {{ Project.macro }}_VERSION_PATCH)
+#define {{ Project.macro }}_VERSION_CHECK QT_VERSION_CHECK
+
+#endif // {{ Project.macro }}_CONFIG_H

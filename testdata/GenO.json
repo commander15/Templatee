@@ -1,0 +1,7 @@
+{
+    "name": "GenO",
+    "description": "The Generic Object Library",
+    "qt": {
+        "modules": [ "Core" ]
+    }
+}

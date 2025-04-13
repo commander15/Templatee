@@ -1,0 +1,25 @@
+{
+    "locales": [ "en", "fr" ],
+    "cmake": {
+        "version": "3.30"
+    },
+    "languages": [
+        {
+            "name": "CXX",
+            "version": 17
+        },
+        {
+            "name": "C",
+            "version": 11
+        }
+    ],
+    "qt": {
+        "version": "6.8.0",
+        "modules": [ "Core" ],
+        "policies": [ "QTP0002", "QTP0003" ]
+    },
+    "extras": [
+        { "name": "CMake", "field": "cmake" },
+        { "name": "Qt", "field": "qt" }
+    ]
+}

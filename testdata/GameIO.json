@@ -1,0 +1,13 @@
+{
+    "name": "GameIO",
+    "description": "Gaming I/O Qt library",
+    "qt": {
+        "modules": [ "Core", "Gui" ]
+    },
+    "dependencies": [
+        {
+            "name": "SDL2",
+            "required": true
+        }
+    ]
+}

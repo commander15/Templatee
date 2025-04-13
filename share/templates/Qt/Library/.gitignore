@@ -1,0 +1,5 @@
+# User files
+CMakeLists.txt.user*
+
+# Build dir
+build/

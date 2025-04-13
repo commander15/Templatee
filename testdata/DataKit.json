@@ -1,0 +1,13 @@
+{
+    "name": "DataKit",
+    "description": "Data handling toolkit for Qt",
+    "qt": {
+        "modules": [ "Core" ]
+    },
+    "dependencies": [
+        {
+            "name": "QXlsxQt6",
+            "required": true
+        }
+    ]
+}

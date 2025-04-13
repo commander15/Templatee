@@ -1,0 +1,17 @@
+{
+    "name": "Widgetry",
+    "description": "The frontend-oriented C++ UI framework",
+    "qt": {
+        "modules": [ "Core", "Gui", "Widgets" ],
+        "dependencies": [
+            {
+                "name": "DataGate",
+                "required": true
+            },
+            {
+                "name": "Jsoner",
+                "required": true
+            }
+        ]
+    }
+}

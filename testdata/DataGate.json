@@ -1,0 +1,13 @@
+{
+    "name": "DataGate",
+    "description": "Data handling toolkit for Qt",
+    "qt": {
+        "modules": [ "Core" ]
+    },
+    "dependencies": [
+        {
+            "name": "Jsoner",
+            "required": true
+        }
+    ]
+}

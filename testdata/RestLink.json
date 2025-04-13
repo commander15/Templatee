@@ -1,0 +1,17 @@
+{
+    "name": "RestLink",
+    "description": "Powerfull Rest Client for Qt",
+    "qt": {
+        "modules": [ "Core", "Network" ],
+        "dependencies": [
+            {
+                "name": "ZLIB",
+                "required": true
+            },
+            {
+                "name": "QXlsxQt6",
+                "required": true
+            }
+        ]
+    }
+}
