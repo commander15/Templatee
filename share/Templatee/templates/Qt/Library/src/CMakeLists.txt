@@ -1,6 +1,16 @@
 # Core library
 add_subdirectory(lib)
 
+# QML module
+if ({{ Project.macro }}_BUILD_QML)
+    add_subdirectory(import)
+endif()
+
+# Widgets library
+if ({{ Project.macro }}_BUILD_WIDGETS)
+    add_subdirectory(widgets)
+endif()
+
 # CMake Packaging
 
 include(CMakePackageConfigHelpers)

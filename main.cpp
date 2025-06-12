@@ -3,5 +3,6 @@
 int main(int argc, char *argv[])
 {
     Application app(argc, argv);
+    app.setApplicationVersion(TOOL_VERSION);
     return app.exec();
 }

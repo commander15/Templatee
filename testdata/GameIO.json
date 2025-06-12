@@ -2,7 +2,7 @@
     "name": "GameIO",
     "description": "Gaming I/O Qt library",
     "qt": {
-        "modules": [ "Core", "Gui" ]
+        "modules": [ "Core", "Gui", "Qml" ]
     },
     "dependencies": [
         {

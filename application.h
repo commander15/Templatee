@@ -2,6 +2,7 @@
 #define APPLICATION_H
 
 #include <QCoreApplication>
+#include <QDir>
 
 class Application : public QCoreApplication
 {
@@ -12,6 +13,11 @@ public:
     ~Application() = default;
 
     int exec();
+
+private:
+    void copyTemplates();
+
+    QDir m_templateDir;
 };
 
 #endif // APPLICATION_H

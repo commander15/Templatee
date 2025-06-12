@@ -213,11 +213,7 @@ QString RenderCommand::dataFile(const QString &path, const QString &name)
 
 QDir RenderCommand::templateDir(const QString &path)
 {
-#ifdef TEMPLATES_DIR
-    QDir templatesDir(TEMPLATES_DIR);
-#else
     QDir templatesDir(QStandardPaths::writableLocation(QStandardPaths::TemplatesLocation) + "/Templatee");
-#endif
 
     QDir dir(QDir::isAbsolutePath(path) ? path : templatesDir.filePath(path));
     dir.setFilter(QDir::Dirs|QDir::Files|QDir::Hidden);

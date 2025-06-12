@@ -10,15 +10,22 @@ project({{ Project.name }}
 
 # Project settings
 
-option({{ Project.macro }}_BUILD_TESTS        OFF "Build {{ Project.name }} tests")
-option({{ Project.macro }}_BUILD_DOCS         OFF "Build {{ Project.name }} documentation")
-option({{ Project.macro }}_BUILD_TRANSLATIONS OFF "Build {{ Project.name }} translations")
-option({{ Project.macro }}_BUILD_EXAMPLES     OFF "Build {{ Project.name }} Examples")
+#option({{ Project.macro }}_BUILD_QML          "Build {{ Project.name }} QML module" OFF)
+#option({{ Project.macro }}_BUILD_WIDGETS      "Build {{ Project.name }} widgets library" OFF)
+option({{ Project.macro }}_BUILD_TESTS        "Build {{ Project.name }} tests" OFF)
+option({{ Project.macro }}_BUILD_DOCS         "Build {{ Project.name }} documentation" OFF)
+option({{ Project.macro }}_BUILD_TRANSLATIONS "Build {{ Project.name }} translations" OFF)
+option({{ Project.macro }}_BUILD_EXAMPLES     "Build {{ Project.name }} Examples" OFF)
 
 set({{ Project.macro }}_LOCALES {{ join(Project.locales, " ") }})
 
-# CMake settings
+# CMake options
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
+
+# Output directories
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 
 # CXX Standard
 set(CMAKE_CXX_STANDARD {{ CXX.version }})
@@ -40,17 +47,27 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(Qt_MODULES {{ join(Qt.modules, " ") }})
+set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/qml)
+
+set(QT_MODULES {{ join(Qt.modules, " ") }})
+
+if ({{ Project.macro }}_BUILD_QML)
+    list(APPEND QT_MODULES Qml)
+endif()
+
+if ({{ Project.macro }}_BUILD_WIDGETS)
+    list(APPEND QT_MODULES Widgets)
+endif()
 
 if ({{ Project.macro }}_BUILD_TESTS)
-    list(APPEND Qt_MODULES Test)
+    list(APPEND QT_MODULES Test)
 endif()
 
 if ({{ Project.macro }}_BUILD_TRANSLATIONS)
-    list(APPEND Qt_MODULES LinguistTools)
+    list(APPEND QT_MODULES LinguistTools)
 endif()
 
-find_package(Qt{{ Qt.version.major }} REQUIRED COMPONENTS ${Qt_MODULES})
+find_package(Qt{{ Qt.version.major }} REQUIRED COMPONENTS ${QT_MODULES})
 
 qt_standard_project_setup(
     REQUIRES {{ Qt.version.string }}
@@ -61,6 +78,11 @@ qt_standard_project_setup(
 ## for policy in Qt.policies
 qt_policy(SET {{ policy }} NEW)
 ## endfor
+
+if ({{ Project.name }}_BUILD_QML)
+    qt_policy(SET QTP0001 NEW)
+    qt_policy(SET QTP0005 NEW)
+endif()
 
 # Other dependencies
 ## for dependency in Project.dependencies

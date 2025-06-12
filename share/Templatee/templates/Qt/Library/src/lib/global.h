@@ -17,4 +17,8 @@
 #define {{ Project.macro }}_D(ClassName) \
     ClassName##Private *d = static_cast<ClassName##Private *>(qGetPtrHelper(d_ptr))
 
+namespace {{ Project.name }} {
+  // Populate !
+}
+
 #endif // {{ Project.macro }}_GLOBAL_H

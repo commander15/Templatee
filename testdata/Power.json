@@ -1,0 +1,17 @@
+{
+    "name": "Power",
+    "description": "Electrical computation library",
+    "qt": {
+        "modules": [ "Core", "Positioning" ],
+        "dependencies": [
+            {
+                "name": "QuaZip-Qt6",
+                "required": true
+            },
+            {
+                "name": "Jsoner",
+                "required": true
+            }
+        ]
+    }
+}

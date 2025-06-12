@@ -3,6 +3,7 @@
 
 #include <QtCore/qcommandlineparser.h>
 #include <QtCore/qcommandlineoption.h>
+#include <QtCore/qtextstream.h>
 
 class AbstractCommand
 {

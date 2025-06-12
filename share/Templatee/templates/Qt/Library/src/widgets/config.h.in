@@ -1,0 +1,8 @@
+#ifndef {{ Project.macro }}_WIDGETS_CONFIG_H
+#define {{ Project.macro }}_WIDGETS_CONFIG_H
+
+#include <{{ Project.name }}/config.h>
+
+// Widgets library configurations goes here !
+
+#endif // {{ Project.macro }}_WIDGETS_CONFIG_H
